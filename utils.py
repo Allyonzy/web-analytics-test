@@ -17,6 +17,8 @@ import textwrap
 
 import streamlit as st
 
+import pandas as pd
+
 
 def show_code(demo):
     """Showing the code of the demo."""
@@ -26,3 +28,11 @@ def show_code(demo):
         st.markdown("## Code")
         sourcelines, _ = inspect.getsourcelines(demo)
         st.code(textwrap.dedent("".join(sourcelines[1:])))
+
+def get_dataframe():
+    # чтение датасета
+    dataframe = pd.read_csv("https://raw.githubusercontent.com/Allyonzy/ArchitectInno2023/main/dataset/titanik.csv")
+    # приведем названия колонок к нижнему регистру и удалим знаки препинания
+    dataframe.columns = dataframe.columns.str.lower().str.replace('[^\w\s]', '', regex=True)
+
+    return dataframe
