@@ -19,6 +19,8 @@ import streamlit as st
 
 import pandas as pd
 
+import joblib
+from sklearn.neighbors import KNeighborsClassifier
 
 def show_code(demo):
     """Showing the code of the demo."""
@@ -36,3 +38,10 @@ def get_dataframe():
     dataframe.columns = dataframe.columns.str.lower().str.replace('[^\w\s]', '', regex=True)
 
     return dataframe
+
+
+def knn_model_load(data, model):
+    #загрузка файла модели knn
+    knn_loaded = joblib.load('knn_best_model.pkl') #классическое  машинное
+    #h5, keras - для нейронок
+    return knn_loaded
