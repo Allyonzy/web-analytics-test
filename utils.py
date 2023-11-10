@@ -33,7 +33,7 @@ def show_code(demo):
 
 def get_dataframe():
     # чтение датасета
-    dataframe = pd.read_csv("https://raw.githubusercontent.com/Allyonzy/ArchitectInno2023/main/dataset/titanik.csv")
+    dataframe = pd.read_csv("data/diabetes.csv")
     # приведем названия колонок к нижнему регистру и удалим знаки препинания
     dataframe.columns = dataframe.columns.str.lower().str.replace('[^\w\s]', '', regex=True)
 
