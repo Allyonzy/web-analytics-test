@@ -6,9 +6,9 @@ dataframe = get_dataframe() # получить данные
 
 # загрузка данных для тестирования моделей
 st.write("Введите тестовую выборку")
-uploaded_file_test = st.file_uploader("Загрузите файл данных (CSV)", type=["csv"])
+uploaded_file_test = st.file_uploader("Загрузите файл данных (CSV)", type=["csv"], key='test')
 st.write("Введите файл, с которым сравниваем (y, outcome)")
-uploaded_file_y = st.file_uploader("Загрузите файл данных (CSV)", type=["csv"])
+uploaded_file_y = st.file_uploader("Загрузите файл данных (CSV)", type=["csv"], key='classes')
 
 
 if uploaded_file_test is not None and uploaded_file_y is not None:

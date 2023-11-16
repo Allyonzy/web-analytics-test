@@ -58,7 +58,7 @@ def evaluate(model, test_data, y_data):
     
     y_test_pred = model.predict(test_data)
     
-    st.write("Предсказание модели на текущих данных" + y_test_pred)
+    # st.write("Предсказание модели на текущих данных" + y_test_pred)
 
     st.write("РЕЗУЛЬТАТЫ НА ВЫБОРКЕ: \n===============================")
     clf_report = pd.DataFrame(classification_report(y_data, y_test_pred, output_dict=True))
